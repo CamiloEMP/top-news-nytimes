@@ -38,6 +38,12 @@
             ],
             "@api/*": [
                 "src/api/*"
+            ],
+            "@querys/*": [
+                "src/api/querys/*"
+            ],
+            "@services/*": [
+                "src/services/*"
             ]
         }
     },

@@ -3,7 +3,8 @@ import { QueryClient } from '@tanstack/react-query'
 
 import { Home } from '@/pages/Home'
 import { MainLayout } from '@/MainLayout'
-import { loader as topNewsSectionLoader, TopNews } from '@/pages/TopNews'
+import { TopNews } from '@/pages/TopNews'
+import { topNewsSectionLoader } from '@/services/getTopNews'
 
 export const queryClient = new QueryClient({
   defaultOptions: {
