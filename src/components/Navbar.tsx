@@ -10,7 +10,7 @@ export const Navbar = () => {
         </Link>
       </li>
       <li>
-        <Link as={RouterLink} fontSize="lg" to="top-stories">
+        <Link as={RouterLink} fontSize="lg" to="top-stories/home">
           Top Stories
         </Link>
       </li>
