@@ -1,5 +1,7 @@
 import { API_KEY } from './config'
 
+import { ResponseTopStories } from '@/types/topStories.types'
+
 class NyTimesApi {
   private apiUrl: string
   private apiKey: string
@@ -9,12 +11,14 @@ class NyTimesApi {
     this.apiKey = apiKey
   }
 
-  async getTopNews(section: string) {
+  async getTopStories(section: string) {
     const response = await fetch(
       `${this.apiUrl}/topstories/v2/${section}.json?api-key=${this.apiKey}`
     )
 
-    return (await response.json()) ?? null
+    const data: ResponseTopStories = await response.json()
+
+    return data ?? null
   }
 }
 

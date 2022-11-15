@@ -3,10 +3,10 @@ import { Params } from 'react-router-dom'
 
 import { api } from '@/api/nyTimesApi'
 
-export const topNewSectionQuery = (section: string) => ({
+export const topStoriesSectionQuery = (section: string) => ({
   queryKey: ['top-news', 'section', section],
   queryFn: async () => {
-    const topNews = await api.getTopNews(section)
+    const topNews = await api.getTopStories(section)
 
     if (!topNews) {
       throw new Response('', {
@@ -19,10 +19,10 @@ export const topNewSectionQuery = (section: string) => ({
   },
 })
 
-export const topNewsSectionLoader =
+export const topStoriesSectionLoader =
   (queryClient: QueryClient) =>
   async ({ params }: { params: Params<string> }) => {
-    const query = topNewSectionQuery(params.section!)
+    const query = topStoriesSectionQuery(params.section!)
 
     return queryClient.getQueriesData(query) ?? (await queryClient.fetchQuery(query))
   }
